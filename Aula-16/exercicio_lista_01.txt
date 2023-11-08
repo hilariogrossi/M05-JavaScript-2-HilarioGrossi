@@ -1,0 +1,76 @@
+Questão 1
+
+Responda as perguntas abaixo:
+
+    # O que sao objetos em JavaScript?
+    ==> Objetos são pares chave-valor, onde se pode armazenar e acessar dados
+    por meio de chaves. As chaves são strings ou símbolos, e os valores podem ser de
+    qualquer tipo de dado, incluindo outros objetos.
+
+    # O que são atributos em JavaScript?
+    ==> 'Atributos' se refere às propriedades de um objeto. As propriedades de um objeto
+    são pares chave-valor como dito acima.
+
+    # O que são métodos de classe em JavaScript?
+    ==> São funções definidas dentro de uma classe que agem sobre os objetos criados
+    a partir dessa classe.
+
+    # O que é uma classe em JavaScript?
+    ==> Uma classe é uma maneira de criar (modelar) objetos, e seu comportamento, e organizar
+    o código tornando-o mais limpo e reutilizável.
+
+    # O que é o construtor de uma classe em JavaScript?
+    ==> É um método especial (no início da classe) que é chamado automaticamente quando você cria uma nova
+    instância (objeto) da classe. Ele é usado para inicializar as propriedades do objeto e executar qualquer
+    lógica necessária durante a criação. Usado como 'new (nome da classe)' estando nesse construtor os atributos.
+    É uma função responsável pela construção de um objeto.
+
+    # Explique o conceito de herança de classes em JavaScript. De um exemplo de uma herança em JavaScript.
+    ==> A herança de classes permite que uma classe (subclasse) herde propriedades e métodos de outra classe
+    (superclasse). É o reaproveitamento de uma classe 'Master' numa outra classe, sendo que se pode adicionar
+    ou substituir funcionalidades da classe herdada.
+        Exemplo:
+            // Superclasse
+            class Veiculo {
+                constructor(marca, modelo) {
+                    this.marca = marca;
+                    this.modelo = modelo;
+                }
+
+                ligar() {
+                    console.log('Veículo ligado');
+                }
+
+            }
+
+            // Subclasse que herda de Veiculo
+            class Carro extends Veiculo {
+                constructor(marca, modelo, cor) {
+                    // Chamando o construtor da superclasse
+                    super(marca, modelo);
+                    
+                    // Adicionando uma nova propriedade à subclasse
+                    this.cor = cor;
+                
+                }
+
+                // Substituindo o método ligar da superclasse
+                ligar() {
+                    console.log('Carro ligado');
+
+                }
+
+                acelerar() {
+                    console.log('Acelerando...');
+
+                }
+        
+            }
+
+            // Criando uma instância da subclasse Carro
+            let meuCarro = new Carro('Honda', 'Civic', 'preto');
+
+            // Chamando métodos da superclasse e da subclasse
+            console.log(meuCarro.marca); // Saída: Honda
+            meuCarro.ligar(); // Saída: Carro ligado
+            meuCarro.acelerar(); // Saída: Acelerando...
