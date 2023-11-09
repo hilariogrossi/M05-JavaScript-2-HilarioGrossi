@@ -1,0 +1,80 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+
+}
+
+/* Estilos para o título principal */
+#noticia-principal {
+    font-size: 24px;
+
+}
+
+/* Estilos para a seção principal de notícias */
+main {
+    padding: 20px;
+
+}
+
+/* Estilos para os títulos de notícias */
+.titulo-noticia {
+    font-size: 18px;
+    color: #444;
+    margin-top: 10px;
+
+}
+
+/* Estilos para os parágrafos de notícias */
+.paragrafo-noticia {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+
+}
+
+/* Estilos para a barra lateral de comentários */
+aside {
+    background-color: #ddd;
+    padding: 20px;
+
+}
+
+/* Estilos para a lista de últimas atualizações no rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+}
+
+/* Estilos para o botão "Alternar Tema" */
+#alternar-tema {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+/* Estilização de outros elementos conforme necessário */
+
+.tema-escuro {
+    background-color: #8b8181;
+    color: #cf1a1a;
+    
+}
