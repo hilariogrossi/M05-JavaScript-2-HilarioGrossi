@@ -20,6 +20,8 @@ class Produto {
     
 }
 
+const produtosSelecionados = [];
+
 class Venda {
     constructor (cliente, produtos) {
         this.cliente = cliente;
@@ -37,7 +39,7 @@ class Venda {
         let total = 0;
 
         for (let i = 0; i < this.produtos.length; i++) {
-            total += this.produtos[i].preco * (this.produtos[i].quantidadeInicial - this.produtos[i].quantidade);
+            total += this.produtos[i].preco * (this.produtos[i].quantidade - produtosSelecionados[i].quantidadeDesejada);
 
         }
 
@@ -46,8 +48,6 @@ class Venda {
     }
 
     realizarVenda() {
-        const produtosSelecionados = [];
-    
         for (let i = 0; i < this.produtos.length; i++) {
             const quantidadeDesejada = parseInt(prompt(`\nQuanto(a)s ${this.produtos[i].nome}(s) deseja comprar? `));
     
@@ -63,18 +63,7 @@ class Venda {
 
             });
 
-        }
-    
-        for (let i = 0; i < produtosSelecionados.length; i++) {
-            const quantidadeDesejada = produtosSelecionados[i].quantidadeDesejada;
-
-            if (quantidadeDesejada > produtosSelecionados[i].quantidade) {
-                console.log(`\nQuantidade insuficiente de ${produtosSelecionados[i].nome} em estoque. A venda não pode ser concluída!`);
-                return;
-
-            }
-    
-            produtosSelecionados[i].quantidade -= quantidadeDesejada;
+            this.produtos[i].quantidade -= quantidadeDesejada;
 
         }
     
