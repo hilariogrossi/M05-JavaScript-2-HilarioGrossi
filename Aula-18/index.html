@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página sobre Jane Doe</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body id="corpo"> 
+    <header id="header">
+        <h1>Jane Doe</h1>
+        <p>Explorando a vida de Jane Doe</p>
+
+    </header>
+    
+    <section id="conteudo">
+        <div id = "perfil">
+            <h1>Essa sou eu:</h1>
+
+            <div id="foto"><img src="perfil.jpg" alt="foto Jane Doe" height="300" width="300"></div>
+            <br>
+
+            <button onclick="esconderMostrar()">Esconde/Mostra Foto</button>
+
+        </div>
+        
+        <div id="meio">
+            <h2>Sobre Mim</h2>
+
+            <div id="sobre">
+                <p>Olá, meu nome é Jane Doe. Sou uma apaixonada entusiasta da tecnologia e do desenvolvimento web.
+                    Minha jornada começou em uma pequena cidade, onde descobri o fascinante mundo da criação online.
+                    Atualmente, estou embarcando na emocionante jornada acadêmica, cursando Ciência da Computação na
+                    Universidade Techville. Meus dias são preenchidos com desafios de aulas estimulantes, envolventes projetos e,
+                    é claro, muitas xícaras de café para manter a mente alerta. Quando não estou imersa em linhas de código, adoro
+                    explorar novos lugares, perder-me nas páginas de livros fascinantes e participar ativamente de eventos relacionados à tecnologia.
+                    Essa jornada é incrível, etou ansiosa para aprender, crescer e criar ainda mais neste vasto universo digital.
+                    Seja bem-vindo(a) à minha página e compartilhe comigo essa paixão pelo mundo da tecnologia!</p>
+                
+            </div>
+
+            <input type="text" id="alteraTextAlign" />
+            <button onclick="alterarTextAlign()">Altere a Formatação do texto</button>
+
+            <input type="text" id="fontFamily" />
+            <button onclick="alterarTextAlign()">Altere a Fonte do texto</button>
+
+        </div>
+
+        <div id="interesses">
+            <h2>Meus Interesses</h2>
+
+            <ul>
+                <li>Desenvolvimento Web</li>
+                <li>Viagens</li>
+                <li>Livros</li>
+                <li>Café</li>
+
+            </ul>
+
+        </div>
+
+        <div id="contato">
+            <h2>Contato</h2>
+
+            <p>Email: jane.doe@example.com</p>
+            <p>Twitter: @JaneDoe</p>
+
+        </div>
+
+        <button onclick="escuroClaro()" id="escuroClaro">Modo Escuro/Claro</button>
+
+        <h3>Alterar a cor do Header e Rodapé</h3>
+        <input type="text" id="cor" />
+        <button onclick="alteraCor()">Alterar a cor do Header e Rodapé</button>
+
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2023 Jane Doe</p>
+
+    </footer>
+
+    <script src="script.js" > </script>
+
+</body>
+
+</html>
