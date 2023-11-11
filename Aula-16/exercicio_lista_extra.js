@@ -14,6 +14,7 @@ class Produto {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+        this.quantidadeVendida = 0;
 
     }
 
@@ -29,6 +30,31 @@ class Venda {
     realizarVenda() {
         console.log(`\nVenda para ${this.cliente.nome} realizada com sucesso!`);
         console.log(`\nA venda tem valor total de R$ ${this.total()}.`);
+    
+        for (let i = 0; i < this.produtos.length; i++) {
+            const produto = this.produtos[i];
+    
+            if (produto.quantidadeVendida > produto.quantidade) {
+                console.log(`\nQuantidade insuficiente de ${produto.nome} em estoque. A venda não pode ser concluída!`);
+                return;
+
+            }
+
+        }
+    
+        for (let i = 0; i < this.produtos.length; i++) {
+            const produto = this.produtos[i];
+
+            produto.quantidade -= produto.quantidadeVendida;
+    
+            if (produto.quantidade === 0) {
+                console.log(`\nAtenção: o estoque de ${produto.nome} está zerado.`);
+
+            }
+    
+            produto.quantidadeVendida = 0;
+
+        }
 
     }
 
@@ -36,7 +62,7 @@ class Venda {
         let total = 0;
 
         for (let i = 0; i < this.produtos.length; i++) {
-            total += this.produtos[i].preco * this.produtos[i].quantidadeDesejada;
+            total += this.produtos[i].preco * this.produtos[i].quantidadeVendida;
 
         }
 
@@ -62,7 +88,7 @@ function inserirCliente() {
 function inserirProduto() {
     const nome = prompt('\nDigite o nome do produto: ');
     const preco = parseFloat(prompt('\nDigite o preço do produto: '));
-    const quantidade = prompt('\nDigite a quantidade do produto: ');
+    const quantidade = parseInt(prompt('\nDigite a quantidade do produto: '));
 
     produtos.push(new Produto(nome, preco, quantidade));
 
@@ -72,7 +98,6 @@ function inserirProduto() {
 
 function realizarVenda() {
     console.log('\n----- Lista de Clientes -----');
-
     clientes.forEach((cliente, indice_1) => {
         console.log(`${indice_1 + 1}. ${cliente.nome} CPF = (${cliente.cpf})`);
 
@@ -130,32 +155,36 @@ function realizarVenda() {
 
         produtosSelecionados.push({
             ...produtos[indiceNumerico - 1],
-            quantidadeDesejada: quantidadeDesejada,
+            quantidadeVendida: quantidadeDesejada,
 
         });
     }
 
     if (produtosSelecionados.length > 0) {
         const venda = new Venda(cliente, produtosSelecionados);
+
         venda.realizarVenda();
 
     } else {
         console.log('\nVenda cancelada.\n');
 
     }
+
+}
+
+function menu() {
+    console.log(`\n----- Menu -----
+1. Inserir Cliente
+2. Inserir Produto
+3. Realizar Venda
+4. Sair\n`);
+
 }
 
 let escolha = 0;
 
 while (escolha !== 4) {
-    console.log(
-        `\n----- Menu -----
-1. Inserir Cliente
-2. Inserir Produto
-3. Realizar Venda
-4. Sair`
-
-    );
+    menu()
 
     escolha = parseInt(prompt('\nEscolha uma opção (1 a 4): '));
 
@@ -180,5 +209,5 @@ while (escolha !== 4) {
             console.log('\nERRO! Opção inválida. Tente novamente.\n');
 
     }
-    
+
 }
