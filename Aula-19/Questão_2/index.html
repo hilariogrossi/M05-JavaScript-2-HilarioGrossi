@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Reserva</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <form id="reservaForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+
+            <label for="data">Data desejada:</label>
+            <input type="date" id="data" name="data" required>
+
+            <button type="button" onclick="enviarReserva()">Enviar Reserva</button>
+
+        </form>
+
+        <div id="dadosReserva"></div>
+
+        <script src="script.js"> </script>
+
+    </body>
+    
+</html>
