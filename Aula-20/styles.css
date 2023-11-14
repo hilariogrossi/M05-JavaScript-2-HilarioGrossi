@@ -1,0 +1,78 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ecf0f1;
+}
+
+#container {
+    text-align: center;
+}
+
+#btnClick {
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #00c8a8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+#btnClick:hover {
+    background-color: #00c8a8;
+}
+
+#inputText, #onkeydown, #onkeypress, #onkeyup {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: 1px solid #00c8a8;
+    border-radius: 5px;
+}
+
+#box {
+    width: 150px;
+    height: 150px;
+    background-color: #00c8a8;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#box:hover {
+    background-color: #00c8a8;
+}
+
+#outputMessage {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+#btnChallenge {
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#btnChallenge:hover {
+    background-color: #c0392b;
+}
+
+#clickCounter {
+    font-size: 18px;
+    color: #2c3e50;
+}
