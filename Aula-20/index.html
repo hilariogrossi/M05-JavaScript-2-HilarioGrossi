@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eventos em JavaScript</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <div id="container">
+            <button id="btnClick" onclick="cliqueMe()">Clique-me!</button>
+
+            <input type="text" id="inputText" onchange="mudarCor()" oninput="mudarCorDigitando()" placeholder="Digite algo" />
+
+            <!--<p>Evento OnKeydown <input type="text" id="onkeydown" onkeydown="digiteDown(this)" placeholder="Digite algo" /><span></span></p>
+
+            <p>Evento OnKeypress <input type="text" id="onkeypress" onkeypress="digitePress(this)" placeholder="Digite algo" /><span></span></p>
+
+            <p>Evento Onkeyup <input type="text" id="onkeyup" onkeyup="digiteUp(this)" placeholder="Digite algo" /><span></span></p>-->
+
+            <div id="box" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" draggable="true">Arraste-me!</div>
+
+            <p id="outputMessage"></p>
+
+            <button id="btnChallenge" onclick="botaoDesafioExtra()">Desafio Extra</button>
+
+            <p id="clickCounter">Cliques: <span id="count">0</span></p>
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
